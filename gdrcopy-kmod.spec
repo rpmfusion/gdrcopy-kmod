@@ -12,7 +12,7 @@
 
 Name:           gdrcopy-kmod
 Version:        2.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A fast GPU memory copy library based on NVIDIA GPUDirect RDMA technology
 
 License:        MIT
@@ -50,7 +50,7 @@ kmodtool  --target %{_target_cpu}  --repo rpmfusion --kmodname %{name} %{?buildf
 %setup -q -c
 
 for kernel_version  in %{?kernel_versions} ; do
-  cp -a gdrcopy-%{version}/gdrdrv _kmod_build_${kernel_version%%___*}
+  cp -a gdrcopy-%{version}/src/gdrdrv _kmod_build_${kernel_version%%___*}
 done
 
 # Needed for nv-p2p.h provided by the nvidia driver
@@ -78,6 +78,9 @@ done
 
 
 %changelog
+* Fri Mar 12 2021 Nicolas Chauvet <kwizart@gmail.com> - 2.2-2
+- Rebuilt
+
 * Fri Mar 12 2021 Nicolas Chauvet <kwizart@gmail.com> - 2.2-1
 - Update to 2.2
 
