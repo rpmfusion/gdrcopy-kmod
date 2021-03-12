@@ -1,8 +1,8 @@
-# Copyright (c) 2015-2020, Nicolas Chauvet <kwizart@gmail.com>
+# Copyright (c) 2015-2021, Nicolas Chauvet <kwizart@gmail.com>
 # All rights reserved.
 
 %{?!nvidia_kmodsrc_version:
-%global nvidia_kmodsrc_version 440.64
+%global nvidia_kmodsrc_version 460.56
 }
 
 %if 0%{?fedora}
@@ -11,7 +11,7 @@
 %endif
 
 Name:           gdrcopy-kmod
-Version:        2.0
+Version:        2.2
 Release:        1%{?dist}
 Summary:        A fast GPU memory copy library based on NVIDIA GPUDirect RDMA technology
 
@@ -78,6 +78,9 @@ done
 
 
 %changelog
+* Fri Mar 12 2021 Nicolas Chauvet <kwizart@gmail.com> - 2.2-1
+- Update to 2.2
+
 * Thu Feb 06 2020 Nicolas Chauvet <kwizart@gmail.com> - 2.0-1
 - Update to 2.0
 
