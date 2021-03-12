@@ -50,7 +50,7 @@ kmodtool  --target %{_target_cpu}  --repo rpmfusion --kmodname %{name} %{?buildf
 %setup -q -c
 
 for kernel_version  in %{?kernel_versions} ; do
-  cp -a gdrcopy-%{commit0}/gdrdrv _kmod_build_${kernel_version%%___*}
+  cp -a gdrcopy-%{version}/gdrdrv _kmod_build_${kernel_version%%___*}
 done
 
 # Needed for nv-p2p.h provided by the nvidia driver
