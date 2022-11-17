@@ -20,7 +20,11 @@ URL:            https://github.com/NVIDIA/gdrcopy
 Source0:        %{url}/archive/v%{version}/gdrcopy-%{version}.tar.gz
 
 # Should be supported on ppc64le, but no public driver yet
+%if 0%{?fedora}
 ExclusiveArch:  x86_64 aarch64
+%else
+ExclusiveArch:  x86_64
+%endif
 
 BuildRequires:  gcc
 BuildRequires:  xorg-x11-drv-nvidia-kmodsrc
