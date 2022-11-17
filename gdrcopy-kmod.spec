@@ -1,8 +1,8 @@
-# Copyright (c) 2015-2021, Nicolas Chauvet <kwizart@gmail.com>
+# Copyright (c) 2015-2022, Nicolas Chauvet <kwizart@gmail.com>
 # All rights reserved.
 
 %{?!nvidia_kmodsrc_version:
-%global nvidia_kmodsrc_version 460.56
+%global nvidia_kmodsrc_version 515.65
 }
 
 %if 0%{?fedora}
@@ -11,8 +11,8 @@
 %endif
 
 Name:           gdrcopy-kmod
-Version:        2.2
-Release:        2%{?dist}
+Version:        2.3
+Release:        1%{?dist}
 Summary:        A fast GPU memory copy library based on NVIDIA GPUDirect RDMA technology
 
 License:        MIT
@@ -20,7 +20,7 @@ URL:            https://github.com/NVIDIA/gdrcopy
 Source0:        %{url}/archive/v%{version}/gdrcopy-%{version}.tar.gz
 
 # Should be supported on ppc64le, but no public driver yet
-ExclusiveArch:  x86_64
+ExclusiveArch:  x86_64 aarch64
 
 BuildRequires:  gcc
 BuildRequires:  xorg-x11-drv-nvidia-kmodsrc
@@ -78,6 +78,9 @@ done
 
 
 %changelog
+* Thu Nov 17 2022 Nicolas Chauvet <kwizart@gmail.com> - 2.3-1
+- Update to 2.3
+
 * Fri Mar 12 2021 Nicolas Chauvet <kwizart@gmail.com> - 2.2-2
 - Rebuilt
 
